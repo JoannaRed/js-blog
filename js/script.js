@@ -6,11 +6,20 @@ const titleClickHandler = function(event){
   
   const activeLinks = document.querySelectorAll('.titles a.active');
 
-for(let activeLink of activeLinks){
+  for(let activeLink of activeLinks){
   activeLink.classList.remove('active');
 }
 
+
+const activeArticles = document.querySelectorAll('.titles a');
+
+  for(let activeArticle of activeArticles){
+    activeArticle.classList.remove('active');
+}
+
   /* add class 'active' to the clicked link */
+
+  
 
   /* remove class 'active' from all articles */
 
