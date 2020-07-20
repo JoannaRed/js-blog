@@ -12,6 +12,7 @@
             "error",
             2
         ],
+        "no-trailing-whitespace": "off",
         "linebreak-style": [
             "off"
         ],
