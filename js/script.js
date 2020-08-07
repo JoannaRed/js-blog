@@ -39,4 +39,40 @@ const links = document.querySelectorAll('.titles a');
   
 for(let link of links){
   link.addEventListener('click', titleClickHandler );
+
+const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles';
+
+function generateTitleLinks(){
+
+  /* (done) remove contents of titleList */
+
+  document.querySelectorAll(optTitleListSelector).innerHTML = ''
+
+  /* for each article */
+
+  const articles =  document.querySelectorAll('.post');  
+
+    /* get the article id */
+
+    /* find the title element */
+
+    /* get the title from the title element */
+
+    /* create HTML of the link */
+
+    /* insert link into titleList */
+
+}
+
+generateTitleLinks();
+
+
+
+
+
+
+
+
 }
