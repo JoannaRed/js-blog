@@ -71,9 +71,14 @@ function generateTitleLinks(){
   /* create HTML of the link */
 
     const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    console.log(linkHTML)
+  /* insert link into titleList */
 
-    /* insert link into titleList */
-}
+  let d1 = document.getElementById('href');
+  d1.insertAdjacentHTML('afterend', '<div id="two">two</div>');   /*nie mam zielonego pojecia...............*/
+} 
+
+//tutaj sie poddaje bo nie mam zielonego pojecia co mam dalej zrobic. Zreszta polowa tego projektu to pisanie po omacku..... :((((
 
 generateTitleLinks();
 
