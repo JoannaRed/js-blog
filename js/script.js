@@ -99,12 +99,14 @@ for(let article of articles){
 
   let wrapperlist = article.querySelectorAll('.post-tags')
 
-  /* make html variable with empty string */
+  /* (done) make html variable with empty string */
 
   let HTML = '<li><a href="#' + articleId + '"><span>' '</span></a></li>';
   console.log(linkHTML)
 
-  /* get tags from data-tags attribute */
+  /* (done) get tags from data-tags attribute */
+
+  const articleTags = article.getAttribute('.data-tags');
 
   /* split tags into array */
 
