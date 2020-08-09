@@ -110,13 +110,18 @@ for(let article of articles){
 
   /* split tags into array */
 
-    /* START LOOP: for each tag */
+  const articleTagsArray = articleTags.split(' ');
 
-    /* generate HTML of the link */
+  /* START LOOP: for each tag */
 
-    /* add generated code to html variable */
+  for(let tag of articleTagsArray){
+  /* generate HTML of the link */
+    
+  /* add generated code to HTML variable */
+    
+   }
 
-    /* END LOOP: for each tag */
+   /* END LOOP: for each tag */
 
   /* insert HTML of all the links into the tags wrapper */
 
