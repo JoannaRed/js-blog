@@ -73,8 +73,10 @@ function generateTitleLinks(){
 
     const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
     console.log(linkHTML)
-  /* insert link into titleList */
-
+  
+    /* insert link into titleList */
+  
+  const titleList =
   let d1 = document.getElementById('href');
   d1.insertAdjacentHTML('afterend', '<div id="two">two</div>');   /*nie mam zielonego pojecia...............*/
 } 
@@ -84,29 +86,39 @@ function generateTitleLinks(){
 generateTitleLinks();
 
 function generateTags(){
-  /* find all articles */
+/* (done) find all articles */
 
-  /* START LOOP: for every article: */
+const articles = document.querySelectorAll('.post');
 
-    /* find tags wrapper */
+/* (done ?) START LOOP: for every article: */
 
-    /* make html variable with empty string */
+for(let article of articles){
+  link.addEventListener('click', titleClickHandler );
 
-    /* get tags from data-tags attribute */
+  /* (done) find tags wrapper */
 
-    /* split tags into array */
+  let wrapperlist = article.querySelectorAll(.post-tags)
+
+
+  /* make html variable with empty string */
+
+  let HTML 
+
+  /* get tags from data-tags attribute */
+
+  /* split tags into array */
 
     /* START LOOP: for each tag */
 
-      /* generate HTML of the link */
+    /* generate HTML of the link */
 
-      /* add generated code to html variable */
+    /* add generated code to html variable */
 
     /* END LOOP: for each tag */
 
-    /* insert HTML of all the links into the tags wrapper */
+  /* insert HTML of all the links into the tags wrapper */
 
-  /* END LOOP: for every article: */
+/* END LOOP: for every article: */
 }
 
 generateTags();
