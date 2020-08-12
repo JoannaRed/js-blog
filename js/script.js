@@ -2,7 +2,8 @@
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
-  optArticleTagsSelector = '.post-tags .list';
+  optArticleTagsSelector = '.post-tags .list',
+  optTagsListSelector = '.tags.list';
 
 const titleClickHandler = function(event) {
   event.preventDefault();
@@ -81,6 +82,9 @@ function generateTitleLinks(){
 generateTitleLinks();
 
 function generateTags(){
+   /* [NEW] create a new variable allTags with an empty array */
+   let allTags = [];
+
   /* find all articles */
 
   const articleList = document.querySelector(optArticleSelector);
@@ -114,14 +118,67 @@ function generateTags(){
 
       const linkHTML = '<li><a href="#tag-' + articleTags + '"><span>' '</span></a></li>';
 
-
       /* add generated code to html variable */
+
+      html.innerHTML = html.innerHTML + linkHTML;
+
+      /* [NEW] check if this link is NOT already in allTags */
+      if(allTags.indexOf(linkHTML) == -1){
+        /* [NEW] add generated code to allTags array */
+        allTags.push(linkHTML);
+      }
 
     /* END LOOP: for each tag */
 
     /* insert HTML of all the links into the tags wrapper */
 
   /* END LOOP: for every article: */
+
+   /* [NEW] find list of tags in right column */
+   const tagList = document.querySelector('.tags');
+
+   /* [NEW] add html from allTags to tagList */
+   tagList.innerHTML = allTags.join(' ');
 }
 }
 generateTags();
+
+function tagClickHandler(event){
+  /* prevent default action for this event */
+
+  /* make new constant named "clickedElement" and give it the value of "this" */
+
+  /* make a new constant "href" and read the attribute "href" of the clicked element */
+
+  /* make a new constant "tag" and extract tag from the "href" constant */
+
+  /* find all tag links with class active */
+
+  /* START LOOP: for each active tag link */
+
+    /* remove class active */
+
+  /* END LOOP: for each active tag link */
+
+  /* find all tag links with "href" attribute equal to the "href" constant */
+
+  /* START LOOP: for each found tag link */
+
+    /* add class active */
+
+  /* END LOOP: for each found tag link */
+
+  /* execute function "generateTitleLinks" with article selector as argument */
+}
+
+function addClickListenersToTags(){
+  /* find all links to tags */
+
+  /* START LOOP: for each link */
+
+    /* add tagClickHandler as event listener for that link */
+
+  /* END LOOP: for each link */
+}
+
+addClickListenersToTags();
