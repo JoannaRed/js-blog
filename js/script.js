@@ -48,7 +48,7 @@ function generateTitleLinks(customSelector = ''){
 
   /* (done) for each article */
 
-  const articles =  document.querySelectorAll('.post');
+  const articles = document.querySelectorAll(optArticleSelector + customSelector);
   for(let article of articles){
     // link.addEventListener('click', titleClickHandler);
 
@@ -183,7 +183,7 @@ function tagClickHandler(event){
 
   /* END LOOP: for each found tag link */
   } 
-   
+
   /* execute function "generateTitleLinks" with article selector as argument */
   generateTitleLinks('[data-tags~="' + tag + '"]');
 
