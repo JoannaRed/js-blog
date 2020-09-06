@@ -249,3 +249,43 @@ function addClickListenersToAuthors(){
 }
 
 addClickListenersToAuthors();
+
+//poki co skopiowalam funkcje poprzednia ale nie wiem jak ja dostosowac
+function authorsClickHandler(event){
+  
+  /* prevent default action for this event */
+
+
+  /* make new constant named "clickedElement" and give it the value of "this" */
+  const clickedElement = this
+
+  /* make a new constant "href" and read the attribute "href" of the clicked element */
+  const href = clickedElement.getAttribute('href')
+  
+  /* make a new constant "tag" and extract tag from the "href" constant */
+  const tag = href.replace('#tag-', '');
+
+  /* find all tag links with class active */
+
+  let activeTag = document.querySelectorAll('a.active[href^="#tag-"]')
+
+  /* START LOOP: for each active tag link */
+  for(let tag of activeTag){
+
+    /* remove class active */
+    tag.classList.remove('active'); 
+
+  /* END LOOP: for each active tag link */
+  }
+
+  /* find all tag links with "href" attribute equal to the "href" constant */
+  let tagLinks = document.querySelectorAll('a[href="' + href + '"]')
+
+  /* START LOOP: for each found tag link */
+  for(let tag of tagLinks){
+
+    /* add class active */
+    tag.classList.add('active');
+
+  /* END LOOP: for each found tag link */
+  } 
