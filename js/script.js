@@ -4,7 +4,7 @@ const optArticleSelector = '.post',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
   optTagsListSelector = '.tags.list',
-  optAuthorsListSelector = '.list authors';
+  optAuthorsListSelector = '.author-name';
 
 const titleClickHandler = function(event) {
   event.preventDefault();
@@ -204,34 +204,41 @@ function addClickListenersToTags(){
 
 addClickListenersToTags();
 
+
 function generateAuthors(){
   /* find all articles */
   const articleList = document.querySelector(optArticleSelector);
+
+  /* make html variable with empty string */
+  let html = '';
 
   /* START LOOP: for every article: */
   const articles =  document.querySelectorAll('.post');
   for (let article of articles) {
 
-    /* find authors wrapper */
-    const authorsWrapper = article.querySelector(optAuthorsListSelector);
-
-    /* make html variable with empty string */
-    let html = '';
-
-    /* get name from data-author attribute */
+    /* get name -from data-author attribute */
     const articleAuthor = article.getAttribute('data-author');
 
+    /*wsadz go do .innerHTML tagu tego artykulu ktory ma klase post-author*/ 
+
+    document.querySelector('post-author').innerHTML.join('');  
+
     /* generate HTML of the link */
-    const linkHTML = '<li><a href="#' + author-name + '"><span>' + author-name + '</span></a></li>';
+    const linkHTML = '<li><a href="#' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';
 
     /* add generated code to html variable */
     html = html + linkHTML;
-
-    /* insert HTML of all the links into the authors wrapper */
-    authorsWrapper.innerHTML.join(' ');
+  
 
   /* END LOOP: for every article: */
 }
+
+/* find authors wrapper */
+const authorsWrapper = article.querySelector(optAuthorsListSelector);
+      
+/* insert HTML of all the links into the authors wrapper */
+authorsWrapper.innerHTML.join(' ');
+
 }
 
 generateAuthors();
@@ -288,4 +295,5 @@ function authorsClickHandler(event){
     tag.classList.add('active');
 
   /* END LOOP: for each found tag link */
-  } 
+  }
+}
